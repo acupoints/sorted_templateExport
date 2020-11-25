@@ -4,7 +4,7 @@ block_cipher = None
 
 
 a = Analysis(['sorted_templateExport.py'],
-             pathex=['C:\\Users\\Literals\\Desktop\\eeprom\\assets'],
+             pathex=['C:\\Users\\Literals\\Desktop\\sorted_templateExport\\src'],
              binaries=[],
              datas=[],
              hiddenimports=[],

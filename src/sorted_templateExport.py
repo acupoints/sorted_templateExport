@@ -46,7 +46,7 @@ if __name__ == "__main__":
             all_lines.append("[{}]".format(segments_el))
         all_lines.append("\n".join(segment_dict[segments_el]))
         all_lines.append("\n")
-    tio.write("output\\plnsrv.sorted.ini", all_lines)
+    tio.write("output\\plnsrv.ini", all_lines)
     print("--> {}".format("Output sorted target configuration file"))
     ###
     html_tr_list = []
@@ -68,7 +68,7 @@ if __name__ == "__main__":
             continue
 
         html_contents_new.append(html_contents_el)
-    tio.write("output\\eeprom.sorted.html", html_contents_new)
+    tio.write("output\\eeprom.html", html_contents_new)
     print("--> {}".format("Output sorted target page file"))
     print("-"*32)
     print("--> {}".format("All operations completed"))
