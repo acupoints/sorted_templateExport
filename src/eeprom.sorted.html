@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1">
+	<style>
+		#customers {
+			font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+			border-collapse: collapse;
+			width: 100vw;
+			font-size: 1.4vw
+		}
+
+		#customers td,
+		#customers th {
+			border: 1px solid #ddd;
+			padding: 0.2em;
+		}
+
+		#customers td {
+			font-size: 2em
+		}
+
+		#customers tr:nth-child(even) {
+			background-color: #f2f2f2;
+		}
+
+		#customers tr:hover {
+			background-color: #ddd;
+		}
+
+		#customers th {
+			padding-top: 12px;
+			padding-bottom: 12px;
+			text-align: left;
+			background-color: #4CAF50;
+			color: white;
+			font-size: 3em;
+		}
+
+		#customers td:nth-child(3) {
+			background-color: #ffeebc
+		}
+
+		#customers tr:nth-child(even) td:nth-child(3) {
+			background-color: #ffdac1
+		}
+	</style>
+</head>
+
+<body style="margin: 0">
+	<table id="customers">
+		<col width=37%>
+		<col width=63%>
+		<tr>
+			<th>Machine Type</th>
+			<th>EEPROM String</th>
+		</tr>
+		<tr><td>20A3</td><td>ThinkPad X230s</td></tr>
+		<tr><td>20A7</td><td>ThinkPad X1 Carbon 2nd</td></tr>
+		<tr><td>20A8</td><td>ThinkPad X1 Carbon 2nd</td></tr>
+		<tr><td>20AA</td><td>ThinkPad T431s</td></tr>
+		<tr><td>20AC</td><td>ThinkPad T431s</td></tr>
+		<tr><td>20AH</td><td>ThinkPad X230s</td></tr>
+		<tr><td>20AJ</td><td>ThinkPad X240s</td></tr>
+		<tr><td>20AK</td><td>ThinkPad X240s</td></tr>
+		<tr><td>20AL</td><td>ThinkPad X240</td></tr>
+		<tr><td>20AM</td><td>ThinkPad X240</td></tr>
+		<tr><td>20AN</td><td>ThinkPad T440p</td></tr>
+		<tr><td>20AQ</td><td>ThinkPad T440s</td></tr>
+		<tr><td>20AR</td><td>ThinkPad T440s</td></tr>
+		<tr><td>20AS</td><td>ThinkPad L440</td></tr>
+		<tr><td>20AT</td><td>ThinkPad L440</td></tr>
+		<tr><td>20AU</td><td>ThinkPad L540</td></tr>
+		<tr><td>20AV</td><td>ThinkPad L540</td></tr>
+		<tr><td>20AW</td><td>ThinkPad T440p</td></tr>
+		<tr><td>20AX</td><td>ThinkPad S3-S431</td></tr>
+		<tr><td>20AY</td><td>ThinkPad S3-S440</td></tr>
+		<tr><td>20B0</td><td>ThinkPad S5-S531</td></tr>
+		<tr><td>20B1</td><td>ThinkPad Edge E445</td></tr>
+		<tr><td>20B2</td><td>ThinkPad Edge E545</td></tr>
+		<tr><td>20B3</td><td>ThinkPad S5-S540</td></tr>
+		<tr><td>20B6</td><td>ThinkPad T440</td></tr>
+		<tr><td>20B7</td><td>ThinkPad T440</td></tr>
+		<tr><td>20BA</td><td>ThinkPad S3-S431</td></tr>
+		<tr><td>20BB</td><td>ThinkPad S3-S440</td></tr>
+		<tr><td>20BC</td><td>ThinkPad Edge E145</td></tr>
+		<tr><td>20BE</td><td>ThinkPad T540p</td></tr>
+		<tr><td>20BF</td><td>ThinkPad T540p</td></tr>
+		<tr><td>20BG</td><td>ThinkPad W540</td></tr>
+		<tr><td>20BH</td><td>ThinkPad W540</td></tr>
+		<tr><td>20BL</td><td>ThinkPad X140e</td></tr>
+		<tr><td>20BM</td><td>ThinkPad X140e</td></tr>
+		<tr><td>20BN</td><td>ThinkPad 8</td></tr>
+		<tr><td>20BQ</td><td>ThinkPad 8</td></tr>
+		<tr><td>20BS</td><td>ThinkPad X1 Carbon 3rd</td></tr>
+		<tr><td>20BT</td><td>ThinkPad X1 Carbon 3rd</td></tr>
+		<tr><td>20BU</td><td>ThinkPad T450</td></tr>
+		<tr><td>20BV</td><td>ThinkPad T450</td></tr>
+		<tr><td>20BW</td><td>ThinkPad T450s</td></tr>
+		<tr><td>20BX</td><td>ThinkPad T450s</td></tr>
+		<tr><td>20C0</td><td>ThinkPad S1 Yoga</td></tr>
+		<tr><td>20C1</td><td>ThinkPad 10</td></tr>
+		<tr><td>20C3</td><td>ThinkPad 10</td></tr>
+		<tr><td>20C5</td><td>ThinkPad Edge E440</td></tr>
+		<tr><td>20C6</td><td>ThinkPad Edge E540</td></tr>
+		<tr><td>20CD</td><td>ThinkPad S1 Yoga</td></tr>
+		<tr><td>20CG</td><td>ThinkPad Helix 2nd</td></tr>
+		<tr><td>20CH</td><td>ThinkPad Helix 2nd</td></tr>
+		<tr><td>20CJ</td><td>ThinkPad T550</td></tr>
+		<tr><td>20CK</td><td>ThinkPad T550</td></tr>
+		<tr><td>20CL</td><td>ThinkPad X250</td></tr>
+		<tr><td>20CM</td><td>ThinkPad X250</td></tr>
+		<tr><td>20D9</td><td>ThinkPad 11e</td></tr>
+		<tr><td>20DA</td><td>ThinkPad 11e</td></tr>
+		<tr><td>20DC</td><td>ThinkPad E450</td></tr>
+		<tr><td>20DD</td><td>ThinkPad E450</td></tr>
+		<tr><td>20DE</td><td>ThinkPad E455</td></tr>
+		<tr><td>20DF</td><td>ThinkPad E550</td></tr>
+		<tr><td>20DG</td><td>ThinkPad E550</td></tr>
+		<tr><td>20DH</td><td>ThinkPad E555</td></tr>
+		<tr><td>20DJ</td><td>ThinkPad T450</td></tr>
+		<tr><td>20DK</td><td>ThinkPad S1 Yoga 12</td></tr>
+		<tr><td>20DL</td><td>ThinkPad S1 Yoga 12</td></tr>
+		<tr><td>20DM</td><td>ThinkPad S3 Yoga 14</td></tr>
+		<tr><td>20DN</td><td>ThinkPad S3 Yoga 14</td></tr>
+		<tr><td>20DQ</td><td>ThinkPad S5 Yoga 15</td></tr>
+		<tr><td>20DR</td><td>ThinkPad S5 Yoga 15</td></tr>
+		<tr><td>20DS</td><td>ThinkPad L450</td></tr>
+		<tr><td>20DT</td><td>ThinkPad L450</td></tr>
+		<tr><td>20E0</td><td>ThinkPad E550c</td></tr>
+		<tr><td>20E1</td><td>ThinkPad W550s</td></tr>
+		<tr><td>20E2</td><td>ThinkPad W550s</td></tr>
+		<tr><td>20E3</td><td>ThinkPad 10 2nd</td></tr>
+		<tr><td>20E4</td><td>ThinkPad 10 2nd</td></tr>
+		<tr><td>20E5</td><td>ThinkPad Yoga 11e</td></tr>
+		<tr><td>20E6</td><td>ThinkPad 11e</td></tr>
+		<tr><td>20E7</td><td>ThinkPad Yoga 11e</td></tr>
+		<tr><td>20E8</td><td>ThinkPad 11e</td></tr>
+		<tr><td>20ED</td><td>ThinkPad 11e</td></tr>
+		<tr><td>20EE</td><td>ThinkPad 11e</td></tr>
+		<tr><td>20EF</td><td>ThinkPad W541</td></tr>
+		<tr><td>20EG</td><td>ThinkPad W541</td></tr>
+		<tr><td>20EL</td><td>ThinkPad Yoga 460</td></tr>
+		<tr><td>20EM</td><td>ThinkPad Yoga 460</td></tr>
+		<tr><td>20EN</td><td>ThinkPad P50</td></tr>
+		<tr><td>20EQ</td><td>ThinkPad P50</td></tr>
+		<tr><td>20ER</td><td>ThinkPad P70</td></tr>
+		<tr><td>20ES</td><td>ThinkPad P70</td></tr>
+		<tr><td>20ET</td><td>ThinkPad E460</td></tr>
+		<tr><td>20EU</td><td>ThinkPad E460</td></tr>
+		<tr><td>20EV</td><td>ThinkPad E560</td></tr>
+		<tr><td>20EW</td><td>ThinkPad E560</td></tr>
+		<tr><td>20EX</td><td>ThinkPad E465</td></tr>
+		<tr><td>20EY</td><td>ThinkPad E565</td></tr>
+		<tr><td>20F1</td><td>ThinkPad L560</td></tr>
+		<tr><td>20F2</td><td>ThinkPad L560</td></tr>
+		<tr><td>20F5</td><td>ThinkPad X260</td></tr>
+		<tr><td>20F6</td><td>ThinkPad X260</td></tr>
+		<tr><td>20F9</td><td>ThinkPad T460s</td></tr>
+		<tr><td>20FA</td><td>ThinkPad T460s</td></tr>
+		<tr><td>20FB</td><td>ThinkPad X1 Carbon 4th</td></tr>
+		<tr><td>20FC</td><td>ThinkPad X1 Carbon 4th</td></tr>
+		<tr><td>20FD</td><td>ThinkPad Yoga 260</td></tr>
+		<tr><td>20FE</td><td>ThinkPad Yoga 260</td></tr>
+		<tr><td>20FH</td><td>ThinkPad T560</td></tr>
+		<tr><td>20FJ</td><td>ThinkPad T560</td></tr>
+		<tr><td>20FK</td><td>ThinkPad P50s</td></tr>
+		<tr><td>20FL</td><td>ThinkPad P50s</td></tr>
+		<tr><td>20FM</td><td>ThinkPad T460</td></tr>
+		<tr><td>20FN</td><td>ThinkPad T460</td></tr>
+		<tr><td>20FQ</td><td>ThinkPad X1 Yoga 1st</td></tr>
+		<tr><td>20FR</td><td>ThinkPad X1 Yoga 1st</td></tr>
+		<tr><td>20FS</td><td>ThinkPad S1 2nd Gen</td></tr>
+		<tr><td>20FT</td><td>ThinkPad S1 2nd Gen</td></tr>
+		<tr><td>20FU</td><td>ThinkPad L460</td></tr>
+		<tr><td>20FV</td><td>ThinkPad L460</td></tr>
+		<tr><td>20FW</td><td>ThinkPad T460p</td></tr>
+		<tr><td>20FX</td><td>ThinkPad T460p</td></tr>
+		<tr><td>20FY</td><td>ThinkPad Yoga 14</td></tr>
+		<tr><td>20G0</td><td>ThinkPad S3</td></tr>
+		<tr><td>20G1</td><td>ThinkPad S3</td></tr>
+		<tr><td>20G4</td><td>ThinkPad S5</td></tr>
+		<tr><td>20G5</td><td>ThinkPad E560p</td></tr>
+		<tr><td>20G8</td><td>ThinkPad Yoga 11e 3rd Gen</td></tr>
+		<tr><td>20G9</td><td>ThinkPad 11e 3rd Gen</td></tr>
+		<tr><td>20GA</td><td>ThinkPad Yoga 11e 3rd Gen</td></tr>
+		<tr><td>20GB</td><td>ThinkPad 11e 3rd Gen</td></tr>
+		<tr><td>20GG</td><td>ThinkPad X1 Tablet</td></tr>
+		<tr><td>20GH</td><td>ThinkPad X1 Tablet</td></tr>
+		<tr><td>20GJ</td><td>ThinkPad 13</td></tr>
+		<tr><td>20GK</td><td>ThinkPad 13</td></tr>
+		<tr><td>20GL</td><td>ThinkPad 13</td></tr>
+		<tr><td>20GM</td><td>ThinkPad 13</td></tr>
+		<tr><td>20GQ</td><td>ThinkPad P40 Yoga</td></tr>
+		<tr><td>20GR</td><td>ThinkPad P40 Yoga</td></tr>
+		<tr><td>20GS</td><td>ThinkPad Yoga 260</td></tr>
+		<tr><td>20GT</td><td>ThinkPad Yoga 260</td></tr>
+		<tr><td>20GU</td><td>ThinkPad 13</td></tr>
+		<tr><td>20H1</td><td>ThinkPad E470</td></tr>
+		<tr><td>20H2</td><td>ThinkPad E470</td></tr>
+		<tr><td>20H3</td><td>ThinkPad E470c</td></tr>
+		<tr><td>20H4</td><td>ThinkPad E475</td></tr>
+		<tr><td>20H5</td><td>ThinkPad E570</td></tr>
+		<tr><td>20H6</td><td>ThinkPad E570</td></tr>
+		<tr><td>20H7</td><td>ThinkPad E570c</td></tr>
+		<tr><td>20H8</td><td>ThinkPad E575</td></tr>
+		<tr><td>20H9</td><td>ThinkPad T570</td></tr>
+		<tr><td>20HA</td><td>ThinkPad T570</td></tr>
+		<tr><td>20HB</td><td>ThinkPad P51s</td></tr>
+		<tr><td>20HC</td><td>ThinkPad P51s</td></tr>
+		<tr><td>20HD</td><td>ThinkPad T470</td></tr>
+		<tr><td>20HE</td><td>ThinkPad T470</td></tr>
+		<tr><td>20HF</td><td>ThinkPad T470s</td></tr>
+		<tr><td>20HG</td><td>ThinkPad T470s</td></tr>
+		<tr><td>20HH</td><td>ThinkPad P51</td></tr>
+		<tr><td>20HJ</td><td>ThinkPad P51</td></tr>
+		<tr><td>20HK</td><td>ThinkPad P71</td></tr>
+		<tr><td>20HL</td><td>ThinkPad P71</td></tr>
+		<tr><td>20HM</td><td>ThinkPad X270</td></tr>
+		<tr><td>20HN</td><td>ThinkPad X270</td></tr>
+		<tr><td>20HQ</td><td>ThinkPad X1 Carbon 5th</td></tr>
+		<tr><td>20HR</td><td>ThinkPad X1 Carbon 5th</td></tr>
+		<tr><td>20HS</td><td>ThinkPad Yoga 11e 4th Gen</td></tr>
+		<tr><td>20HT</td><td>ThinkPad 11e 4th Gen</td></tr>
+		<tr><td>20HU</td><td>ThinkPad Yoga 11e 4th Gen</td></tr>
+		<tr><td>20HV</td><td>ThinkPad 11e 4th Gen</td></tr>
+		<tr><td>20J1</td><td>ThinkPad 13</td></tr>
+		<tr><td>20J2</td><td>ThinkPad 13</td></tr>
+		<tr><td>20J3</td><td>ThinkPad S2</td></tr>
+		<tr><td>20J4</td><td>ThinkPad L470</td></tr>
+		<tr><td>20J5</td><td>ThinkPad L470</td></tr>
+		<tr><td>20J6</td><td>ThinkPad T470p</td></tr>
+		<tr><td>20J7</td><td>ThinkPad T470p</td></tr>
+		<tr><td>20J8</td><td>ThinkPad L570</td></tr>
+		<tr><td>20J9</td><td>ThinkPad L570</td></tr>
+		<tr><td>20JA</td><td>ThinkPad S5 2nd Gen</td></tr>
+		<tr><td>20JB</td><td>ThinkPad X1 Tablet Gen 2</td></tr>
+		<tr><td>20JC</td><td>ThinkPad X1 Tablet Gen 2</td></tr>
+		<tr><td>20JD</td><td>ThinkPad X1 Yoga 2nd</td></tr>
+		<tr><td>20JE</td><td>ThinkPad X1 Yoga 2nd</td></tr>
+		<tr><td>20JF</td><td>ThinkPad X1 Yoga 2nd</td></tr>
+		<tr><td>20JG</td><td>ThinkPad X1 Yoga 2nd</td></tr>
+		<tr><td>20JH</td><td>ThinkPad Yoga 370</td></tr>
+		<tr><td>20JJ</td><td>ThinkPad Yoga 370</td></tr>
+		<tr><td>20JK</td><td>ThinkPad S1 3rd Gen</td></tr>
+		<tr><td>20JL</td><td>ThinkPad S1 3rd Gen</td></tr>
+		<tr><td>20JM</td><td>ThinkPad T470</td></tr>
+		<tr><td>20JN</td><td>ThinkPad T470</td></tr>
+		<tr><td>20JQ</td><td>ThinkPad L570</td></tr>
+		<tr><td>20JR</td><td>ThinkPad L570</td></tr>
+		<tr><td>20JS</td><td>ThinkPad T470s</td></tr>
+		<tr><td>20JT</td><td>ThinkPad T470s</td></tr>
+		<tr><td>20JU</td><td>ThinkPad L470</td></tr>
+		<tr><td>20JV</td><td>ThinkPad L470</td></tr>
+		<tr><td>20JW</td><td>ThinkPad T570</td></tr>
+		<tr><td>20JX</td><td>ThinkPad T570</td></tr>
+		<tr><td>20JY</td><td>ThinkPad P51s</td></tr>
+		<tr><td>20K0</td><td>ThinkPad P51s</td></tr>
+		<tr><td>20K3</td><td>ThinkPad X1 Carbon 5th</td></tr>
+		<tr><td>20K4</td><td>ThinkPad X1 Carbon 5th</td></tr>
+		<tr><td>20K5</td><td>ThinkPad X270</td></tr>
+		<tr><td>20K6</td><td>ThinkPad X270</td></tr>
+		<tr><td>20K7</td><td>ThinkPad 25</td></tr>
+		<tr><td>20KC</td><td>ThinkPad A275</td></tr>
+		<tr><td>20KD</td><td>ThinkPad A275</td></tr>
+		<tr><td>20KE</td><td>ThinkPad X280</td></tr>
+		<tr><td>20KF</td><td>ThinkPad X280</td></tr>
+		<tr><td>20KG</td><td>ThinkPad X1 Carbon 6th</td></tr>
+		<tr><td>20KH</td><td>ThinkPad X1 Carbon 6th</td></tr>
+		<tr><td>20KJ</td><td>ThinkPad X1 Tablet Gen 3</td></tr>
+		<tr><td>20KK</td><td>ThinkPad X1 Tablet Gen 3</td></tr>
+		<tr><td>20KL</td><td>ThinkPad A475</td></tr>
+		<tr><td>20KM</td><td>ThinkPad A475</td></tr>
+		<tr><td>20KN</td><td>ThinkPad E480</td></tr>
+		<tr><td>20KQ</td><td>ThinkPad E480</td></tr>
+		<tr><td>20KR</td><td>ThinkPad R480</td></tr>
+		<tr><td>20KS</td><td>ThinkPad E580</td></tr>
+		<tr><td>20KT</td><td>ThinkPad E580</td></tr>
+		<tr><td>20KU</td><td>ThinkPad E485</td></tr>
+		<tr><td>20KV</td><td>ThinkPad E585</td></tr>
+		<tr><td>20L1</td><td>ThinkPad S2 3rd Gen</td></tr>
+		<tr><td>20L2</td><td>ThinkPad S2 Yoga 3rd Gen</td></tr>
+		<tr><td>20L5</td><td>ThinkPad T480</td></tr>
+		<tr><td>20L6</td><td>ThinkPad T480</td></tr>
+		<tr><td>20L7</td><td>ThinkPad T480s</td></tr>
+		<tr><td>20L8</td><td>ThinkPad T480s</td></tr>
+		<tr><td>20L9</td><td>ThinkPad T580</td></tr>
+		<tr><td>20LA</td><td>ThinkPad T580</td></tr>
+		<tr><td>20LB</td><td>ThinkPad P52s</td></tr>
+		<tr><td>20LC</td><td>ThinkPad P52s</td></tr>
+		<tr><td>20LD</td><td>ThinkPad X1 Yoga 3rd</td></tr>
+		<tr><td>20LE</td><td>ThinkPad X1 Yoga 3rd</td></tr>
+		<tr><td>20LF</td><td>ThinkPad X1 Yoga 3rd</td></tr>
+		<tr><td>20LG</td><td>ThinkPad X1 Yoga 3rd</td></tr>
+		<tr><td>20LH</td><td>ThinkPad X380 Yoga</td></tr>
+		<tr><td>20LJ</td><td>ThinkPad X380 Yoga</td></tr>
+		<tr><td>20LK</td><td>ThinkPad S1 4th</td></tr>
+		<tr><td>20LL</td><td>ThinkPad S1 4th</td></tr>
+		<tr><td>20LM</td><td>ThinkPad Yoga 11e 5th Gen</td></tr>
+		<tr><td>20LN</td><td>ThinkPad Yoga 11e 5th Gen</td></tr>
+		<tr><td>20LQ</td><td>ThinkPad 11e 5th Gen</td></tr>
+		<tr><td>20LR</td><td>ThinkPad 11e 5th Gen</td></tr>
+		<tr><td>20LS</td><td>ThinkPad L480</td></tr>
+		<tr><td>20LT</td><td>ThinkPad L480</td></tr>
+		<tr><td>20LW</td><td>ThinkPad L580</td></tr>
+		<tr><td>20LX</td><td>ThinkPad L580</td></tr>
+		<tr><td>20M5</td><td>ThinkPad L380</td></tr>
+		<tr><td>20M6</td><td>ThinkPad L380</td></tr>
+		<tr><td>20M7</td><td>ThinkPad L380 Yoga</td></tr>
+		<tr><td>20M8</td><td>ThinkPad L380 Yoga</td></tr>
+		<tr><td>20M9</td><td>ThinkPad P52</td></tr>
+		<tr><td>20MA</td><td>ThinkPad P52</td></tr>
+		<tr><td>20MB</td><td>ThinkPad P72</td></tr>
+		<tr><td>20MC</td><td>ThinkPad P72</td></tr>
+		<tr><td>20MD</td><td>ThinkPad P1</td></tr>
+		<tr><td>20ME</td><td>ThinkPad P1</td></tr>
+		<tr><td>20MF</td><td>ThinkPad X1 Extreme</td></tr>
+		<tr><td>20MG</td><td>ThinkPad X1 Extreme</td></tr>
+		<tr><td>20MM</td><td>ThinkPad P51</td></tr>
+		<tr><td>20MN</td><td>ThinkPad P51</td></tr>
+		<tr><td>20MU</td><td>ThinkPad A485</td></tr>
+		<tr><td>20MV</td><td>ThinkPad A485</td></tr>
+		<tr><td>20MW</td><td>ThinkPad A285</td></tr>
+		<tr><td>20MX</td><td>ThinkPad A285</td></tr>
+		<tr><td>20MY</td><td>ThinkSmart Hub 700</td></tr>
+		<tr><td>20N0</td><td>ThinkSmart Hub 700 </td></tr>
+		<tr><td>20N2</td><td>ThinkPad T490</td></tr>
+		<tr><td>20N3</td><td>ThinkPad T490</td></tr>
+		<tr><td>20N4</td><td>ThinkPad T590</td></tr>
+		<tr><td>20N5</td><td>ThinkPad T590</td></tr>
+		<tr><td>20N6</td><td>ThinkPad P53s</td></tr>
+		<tr><td>20N7</td><td>ThinkPad P53s </td></tr>
+		<tr><td>20N8</td><td>ThinkPad E490</td></tr>
+		<tr><td>20N9</td><td>ThinkPad E490</td></tr>
+		<tr><td>20NA</td><td>ThinkPad R490</td></tr>
+		<tr><td>20NB</td><td>ThinkPad E590</td></tr>
+		<tr><td>20NC</td><td>ThinkPad E590</td></tr>
+		<tr><td>20ND</td><td>ThinkPad R590</td></tr>
+		<tr><td>20NE</td><td>ThinkPad E495</td></tr>
+		<tr><td>20NF</td><td>ThinkPad E595</td></tr>
+		<tr><td>20NG</td><td>ThinkPad S3</td></tr>
+		<tr><td>20NJ</td><td>ThinkPad T495</td></tr>
+		<tr><td>20NK</td><td>ThinkPad T495</td></tr>
+		<tr><td>20NL</td><td>ThinkPad X395</td></tr>
+		<tr><td>20NM</td><td>ThinkPad X395</td></tr>
+		<tr><td>20NN</td><td>ThinkPad X390 Yoga</td></tr>
+		<tr><td>20NQ</td><td>ThinkPad X390 Yoga</td></tr>
+		<tr><td>20NR</td><td>ThinkPad L390</td></tr>
+		<tr><td>20NS</td><td>ThinkPad L390</td></tr>
+		<tr><td>20NT</td><td>ThinkPad L390 Yoga</td></tr>
+		<tr><td>20NU</td><td>ThinkPad L390 Yoga</td></tr>
+		<tr><td>20NV</td><td>ThinkPad S2 4th Gen</td></tr>
+		<tr><td>20NW</td><td>ThinkPad S2 Yoga 4th Gen</td></tr>
+		<tr><td>20NX</td><td>ThinkPad T490s</td></tr>
+		<tr><td>20NY</td><td>ThinkPad T490s</td></tr>
+		<tr><td>20Q0</td><td>ThinkPad X390</td></tr>
+		<tr><td>20Q1</td><td>ThinkPad X390</td></tr>
+		<tr><td>20Q5</td><td>ThinkPad L490</td></tr>
+		<tr><td>20Q6</td><td>ThinkPad L490</td></tr>
+		<tr><td>20Q7</td><td>ThinkPad L590</td></tr>
+		<tr><td>20Q8</td><td>ThinkPad L590</td></tr>
+		<tr><td>20Q9</td><td>ThinkPad T490</td></tr>
+		<tr><td>20QA</td><td>ThinkPad X1 Titanium Gen 1</td></tr>
+		<tr><td>20QB</td><td>ThinkPad X1 Titanium Gen 1</td></tr>
+		<tr><td>20QC</td><td>ThinkPad E490s</td></tr>
+		<tr><td>20QD</td><td>ThinkPad X1 Carbon 7th</td></tr>
+		<tr><td>20QE</td><td>ThinkPad X1 Carbon 7th</td></tr>
+		<tr><td>20QF</td><td>ThinkPad X1 Yoga 4th</td></tr>
+		<tr><td>20QG</td><td>ThinkPad X1 Yoga 4th</td></tr>
+		<tr><td>20QH</td><td>ThinkPad T490</td></tr>
+		<tr><td>20QJ</td><td>ThinkPad T495s</td></tr>
+		<tr><td>20QK</td><td>ThinkPad T495s</td></tr>
+		<tr><td>20QN</td><td>ThinkPad P53</td></tr>
+		<tr><td>20QQ</td><td>ThinkPad P53</td></tr>
+		<tr><td>20QR</td><td>ThinkPad P73</td></tr>
+		<tr><td>20QS</td><td>ThinkPad P73</td></tr>
+		<tr><td>20QT</td><td>ThinkPad P1 Gen 2</td></tr>
+		<tr><td>20QU</td><td>ThinkPad P1 Gen 2</td></tr>
+		<tr><td>20QV</td><td>ThinkPad X1 Extreme 2nd</td></tr>
+		<tr><td>20QW</td><td>ThinkPad X1 Extreme 2nd</td></tr>
+		<tr><td>20R1</td><td>ThinkPad X1 Carbon 7th</td></tr>
+		<tr><td>20R2</td><td>ThinkPad X1 Carbon 7th</td></tr>
+		<tr><td>20R3</td><td>ThinkPad L13</td></tr>
+		<tr><td>20R4</td><td>ThinkPad L13</td></tr>
+		<tr><td>20R5</td><td>ThinkPad L13 Yoga</td></tr>
+		<tr><td>20R6</td><td>ThinkPad L13 Yoga</td></tr>
+		<tr><td>20R7</td><td>ThinkPad S2 5th Gen</td></tr>
+		<tr><td>20R8</td><td>ThinkPad S2 Yoga 5th Gen</td></tr>
+		<tr><td>20RA</td><td>ThinkPad E14</td></tr>
+		<tr><td>20RB</td><td>ThinkPad E14</td></tr>
+		<tr><td>20RC</td><td>ThinkPad R14</td></tr>
+		<tr><td>20RD</td><td>ThinkPad E15</td></tr>
+		<tr><td>20RE</td><td>ThinkPad E15</td></tr>
+		<tr><td>20RG</td><td>ThinkPad S3 Gen 2</td></tr>
+		<tr><td>20RH</td><td>ThinkPad P43s</td></tr>
+		<tr><td>20RJ</td><td>ThinkPad P43s</td></tr>
+		<tr><td>20RK</td><td>ThinkPad X1 Fold Gen 1</td></tr>
+		<tr><td>20RL</td><td>ThinkPad X1 Fold Gen 1</td></tr>
+		<tr><td>20RX</td><td>ThinkPad T490</td></tr>
+		<tr><td>20RY</td><td>ThinkPad T490</td></tr>
+		<tr><td>20S0</td><td>ThinkPad T14 Gen 1</td></tr>
+		<tr><td>20S1</td><td>ThinkPad T14 Gen 1</td></tr>
+		<tr><td>20S2</td><td>ThinkPad T14 Gen 1</td></tr>
+		<tr><td>20S3</td><td>ThinkPad T14 Gen 1</td></tr>
+		<tr><td>20S4</td><td>ThinkPad P14s Gen 1</td></tr>
+		<tr><td>20S5</td><td>ThinkPad P14s Gen 1</td></tr>
+		<tr><td>20S6</td><td>ThinkPad T15 Gen 1</td></tr>
+		<tr><td>20S7</td><td>ThinkPad T15 Gen 1</td></tr>
+		<tr><td>20SA</td><td>ThinkPad X1 Yoga 4th</td></tr>
+		<tr><td>20SB</td><td>ThinkPad X1 Yoga 4th</td></tr>
+		<tr><td>20SC</td><td>ThinkPad X390</td></tr>
+		<tr><td>20SD</td><td>ThinkPad X390</td></tr>
+		<tr><td>20SE</td><td>ThinkPad 11e Yoga Gen 6</td></tr>
+		<tr><td>20SF</td><td>ThinkPad 11e Yoga Gen 6</td></tr>
+		<tr><td>20SN</td><td>ThinkPad P17 Gen 1</td></tr>
+		<tr><td>20SQ</td><td>ThinkPad P17 Gen 1</td></tr>
+		<tr><td>20ST</td><td>ThinkPad P15 Gen 1</td></tr>
+		<tr><td>20SU</td><td>ThinkPad P15 Gen 1</td></tr>
+		<tr><td>20SX</td><td>ThinkPad X13 Yoga Gen 1</td></tr>
+		<tr><td>20SY</td><td>ThinkPad X13 Yoga Gen 1</td></tr>
+		<tr><td>20T0</td><td>ThinkPad T14s Gen 1</td></tr>
+		<tr><td>20T1</td><td>ThinkPad T14s Gen 1</td></tr>
+		<tr><td>20T2</td><td>ThinkPad X13 Gen 1</td></tr>
+		<tr><td>20T3</td><td>ThinkPad X13 Gen 1</td></tr>
+		<tr><td>20T4</td><td>ThinkPad P15s Gen 1</td></tr>
+		<tr><td>20T5</td><td>ThinkPad P15s Gen 1</td></tr>
+		<tr><td>20T6</td><td>ThinkPad E14 Gen 2</td></tr>
+		<tr><td>20T7</td><td>ThinkPad E14 Gen 2</td></tr>
+		<tr><td>20T8</td><td>ThinkPad E15 Gen 2</td></tr>
+		<tr><td>20T9</td><td>ThinkPad E15 Gen 2</td></tr>
+		<tr><td>20TA</td><td>ThinkPad E14 Gen 2</td></tr>
+		<tr><td>20TB</td><td>ThinkPad E14 Gen 2</td></tr>
+		<tr><td>20TC</td><td>ThinkPad R14 Gen 2</td></tr>
+		<tr><td>20TD</td><td>ThinkPad E15 Gen 2</td></tr>
+		<tr><td>20TE</td><td>ThinkPad E15 Gen 2</td></tr>
+		<tr><td>20TH</td><td>ThinkPad P1 Gen 3</td></tr>
+		<tr><td>20TJ</td><td>ThinkPad P1 Gen 3</td></tr>
+		<tr><td>20TK</td><td>ThinkPad X1 Extreme Gen 3</td></tr>
+		<tr><td>20TL</td><td>ThinkPad X1 Extreme Gen 3</td></tr>
+		<tr><td>20TM</td><td>ThinkPad T15p Gen 1</td></tr>
+		<tr><td>20TN</td><td>ThinkPad T15p Gen 1</td></tr>
+		<tr><td>20TQ</td><td>ThinkPad P15v Gen 1</td></tr>
+		<tr><td>20TR</td><td>ThinkPad P15v Gen 1</td></tr>
+		<tr><td>20U1</td><td>ThinkPad L14 Gen 1</td></tr>
+		<tr><td>20U2</td><td>ThinkPad L14 Gen 1</td></tr>
+		<tr><td>20U3</td><td>ThinkPad L15 Gen 1</td></tr>
+		<tr><td>20U4</td><td>ThinkPad L15 Gen 1</td></tr>
+		<tr><td>20U5</td><td>ThinkPad L14 Gen 1</td></tr>
+		<tr><td>20U6</td><td>ThinkPad L14 Gen 1</td></tr>
+		<tr><td>20U7</td><td>ThinkPad L15 Gen 1</td></tr>
+		<tr><td>20U8</td><td>ThinkPad L15 Gen 1</td></tr>
+		<tr><td>20U9</td><td>ThinkPad X1 Carbon Gen 8</td></tr>
+		<tr><td>20UA</td><td>ThinkPad X1 Carbon Gen 8</td></tr>
+		<tr><td>20UB</td><td>ThinkPad X1 Yoga Gen 5</td></tr>
+		<tr><td>20UC</td><td>ThinkPad X1 Yoga Gen 5</td></tr>
+		<tr><td>20UD</td><td>ThinkPad T14 Gen 1</td></tr>
+		<tr><td>20UE</td><td>ThinkPad T14 Gen 1</td></tr>
+		<tr><td>20UF</td><td>ThinkPad X13 Gen 1</td></tr>
+		<tr><td>20UG</td><td>ThinkPad X13 Gen 1</td></tr>
+		<tr><td>20UH</td><td>ThinkPad T14s Gen 1</td></tr>
+		<tr><td>20UJ</td><td>ThinkPad T14s Gen 1</td></tr>
+		<tr><td>20UN</td><td>ThinkPad X1 Nano Gen 1</td></tr>
+		<tr><td>20UQ</td><td>ThinkPad X1 Nano Gen 1</td></tr>
+		<tr><td>20UR</td><td>ThinkPad T15g Gen 1</td></tr>
+		<tr><td>20US</td><td>ThinkPad T15g Gen 1</td></tr>
+		<tr><td>20UV</td><td>ThinkPad X12 Detachable Gen 1</td></tr>
+		<tr><td>20UW</td><td>ThinkPad X12 Detachable Gen 1</td></tr>
+		<tr><td>20UX</td><td>Lenovo ThinkPad C13 Yoga Gen 1 Chromebook</td></tr>
+		<tr><td>20UY</td><td>Lenovo ThinkPad C13 Yoga Gen 1 Chromebook</td></tr>
+		<tr><td>20VH</td><td>ThinkPad L13 Gen 2</td></tr>
+		<tr><td>20VJ</td><td>ThinkPad L13 Gen 2</td></tr>
+		<tr><td>20VK</td><td>ThinkPad L13 Yoga Gen 2</td></tr>
+		<tr><td>20VL</td><td>ThinkPad L13 Yoga Gen 2</td></tr>
+		<tr><td>20VM</td><td>ThinkPad S2 6th Gen</td></tr>
+		<tr><td>20VN</td><td>ThinkPad S2 Yoga 6th Gen</td></tr>
+		<tr><td>20VX</td><td>ThinkPad P14s</td></tr>
+		<tr><td>20VY</td><td>ThinkPad P14s</td></tr>
+		<tr><td>20W0</td><td>ThinkPad T14</td></tr>
+		<tr><td>20W1</td><td>ThinkPad T14</td></tr>
+		<tr><td>20W4</td><td>ThinkPad T15</td></tr>
+		<tr><td>20W5</td><td>ThinkPad T15</td></tr>
+		<tr><td>20W6</td><td>ThinkPad P15s</td></tr>
+		<tr><td>20W7</td><td>ThinkPad P15s</td></tr>
+		<tr><td>20W8</td><td>ThinkPad X13 Yoga Gen 2</td></tr>
+		<tr><td>20W9</td><td>ThinkPad X13 Yoga Gen 2</td></tr>
+		<tr><td>20WF</td><td>ThinkPad E14</td></tr>
+		<tr><td>20WG</td><td>ThinkPad E14</td></tr>
+		<tr><td>20WK</td><td>ThinkPad X13 Gen 2</td></tr>
+		<tr><td>20WL</td><td>ThinkPad X13 Gen 2</td></tr>
+		<tr><td>20WM</td><td>ThinkPad T14s Gen 2</td></tr>
+		<tr><td>20WN</td><td>ThinkPad T14s Gen 2</td></tr>
+		<tr><td>20X1</td><td>ThinkPad L14 Gen 2</td></tr>
+		<tr><td>20X2</td><td>ThinkPad L14 Gen 2</td></tr>
+		<tr><td>20X3</td><td>ThinkPad L15 Gen 2</td></tr>
+		<tr><td>20X4</td><td>ThinkPad L15 Gen 2</td></tr>
+		<tr><td>20X5</td><td>ThinkPad L14 Gen 2</td></tr>
+		<tr><td>20X6</td><td>ThinkPad L14 Gen 2</td></tr>
+		<tr><td>20X7</td><td>ThinkPad L15 Gen 2</td></tr>
+		<tr><td>20X8</td><td>ThinkPad L15 Gen 2</td></tr>
+		<tr><td>20XF</td><td>ThinkPad T14s Gen 2</td></tr>
+		<tr><td>20XG</td><td>ThinkPad T14s Gen 2</td></tr>
+		<tr><td>20XH</td><td>ThinkPad X13 Gen 2</td></tr>
+		<tr><td>20XJ</td><td>ThinkPad X13 Gen 2</td></tr>
+		<tr><td>20XK</td><td>ThinkPad T14 Gen 2</td></tr>
+		<tr><td>20XL</td><td>ThinkPad T14 Gen 2</td></tr>
+		<tr><td>20XW</td><td>ThinkPad X1 Carbon Gen 9</td></tr>
+		<tr><td>20XX</td><td>ThinkPad X1 Carbon Gen 9</td></tr>
+		<tr><td>20XY</td><td>ThinkPad X1 Yoga Gen 6</td></tr>
+		<tr><td>20Y0</td><td>ThinkPad X1 Yoga Gen 6</td></tr>
+		<tr><td>20Y1</td><td>ThinkPad P14s Gen 1</td></tr>
+		<tr><td>20Y2</td><td>ThinkPad P14s Gen 1</td></tr>
+		<tr><td>20Y3</td><td>ThinkPad P1 Gen 4</td></tr>
+		<tr><td>20Y4</td><td>ThinkPad P1 Gen 4</td></tr>
+		<tr><td>20Y5</td><td>ThinkPad X1 Extreme Gen 4</td></tr>
+		<tr><td>20Y6</td><td>ThinkPad X1 Extreme Gen 4</td></tr>
+		<tr><td>20Y7</td><td>ThinkPad E14 Gen 3</td></tr>
+		<tr><td>20YD</td><td>ThinkPad E14 Gen 3</td></tr>
+		<tr><td>20YE</td><td>ThinkPad E14 Gen 3</td></tr>
+		<tr><td>20YF</td><td>ThinkPad E14 Gen 3</td></tr>
+		<tr><td>20YG</td><td>ThinkPad E15 Gen 3</td></tr>
+		<tr><td>20YH</td><td>ThinkPad E15 Gen 3</td></tr>
+		<tr><td>20YJ</td><td>ThinkPad E15 Gen 3</td></tr>
+		<tr><td>20YK</td><td>ThinkPad E15 Gen 3</td></tr>
+		<tr><td>20YQ</td><td>ThinkPad P15 Gen 2</td></tr>
+		<tr><td>20YR</td><td>ThinkPad P15 Gen 2</td></tr>
+		<tr><td>20YS</td><td>ThinkPad T15g Gen 2</td></tr>
+		<tr><td>20YT</td><td>ThinkPad T15g Gen 2</td></tr>
+		<tr><td>20YU</td><td>ThinkPad P17 Gen 2</td></tr>
+		<tr><td>20YV</td><td>ThinkPad P17 Gen 2</td></tr>
+		<tr><td>21A0</td><td>ThinkPad P14s Gen 2</td></tr>
+		<tr><td>21A1</td><td>ThinkPad P14s Gen 2</td></tr>
+		<tr><td>21A7</td><td>ThinkPad T15p Gen 2</td></tr>
+		<tr><td>21A8</td><td>ThinkPad T15p Gen 2</td></tr>
+		<tr><td>21A9</td><td>ThinkPad P15v Gen 2</td></tr>
+		<tr><td>21AA</td><td>ThinkPad P15v Gen 2</td></tr>
+		<tr><td>21AB</td><td>ThinkPad L13 Gen 2</td></tr>
+		<tr><td>21AC</td><td>ThinkPad L13 Gen 2</td></tr>
+		<tr><td>21AD</td><td>ThinkPad L13 Yoga Gen 2</td></tr>
+		<tr><td>21AE</td><td>ThinkPad L13 Yoga Gen 2</td></tr>
+		<tr><td>21AF</td><td>ThinkPad S2 Gen 6</td></tr>
+		<tr><td>21AG</td><td>ThinkPad S2 Yoga Gen 6</td></tr>
+		<!--placeholder-end-->
+
+		<tr>
+			<td>ThinkPad T490</td>
+			<td>20N2, 20N3</td>
+			<td>ThinkPad T490</td>
+		</tr>
+		<tr>
+			<td>ThinkPad T590</td>
+			<td>20N4, 20N5</td>
+			<td>ThinkPad T590</td>
+		</tr>
+		<tr>
+			<td>ThinkPad T490s</td>
+			<td>20NX, 20NY</td>
+			<td>ThinkPad T490s</td>
+		</tr>
+		<tr>
+			<td>ThinkPad X390</td>
+			<td>20Q0, 20Q1</td>
+			<td>ThinkPad X390</td>
+		</tr>
+		<tr>
+			<td>ThinkPad X1 Carbon G7</td>
+			<td>20QD, 20QE</td>
+			<td>ThinkPad X1 Carbon 7th</td>
+		</tr>
+		<tr>
+			<td>ThinkPad X1 Yoga G4</td>
+			<td>20QF, 20QG</td>
+			<td>ThinkPad X1 Yoga 4th</td>
+		</tr>
+		<tr>
+			<td>ThinkPad T14</td>
+			<td>20S0, 20S1, 20S2, 20S3, 20UD, 20UE</td>
+			<td>ThinkPad T14 Gen 1</td>
+		</tr>
+		<tr>
+			<td>ThinkPad T15</td>
+			<td>20S6, 20S7</td>
+			<td>ThinkPad T15 Gen 1</td>
+		</tr>
+		<tr>
+			<td>ThinkPad P14s</td>
+			<td>20S4, 20S5, 20Y1, 20Y2</td>
+			<td>ThinkPad P14s Gen 1</td>
+		</tr>
+		<tr>
+			<td>ThinkPad P15s</td>
+			<td>20T4, 20T5</td>
+			<td>ThinkPad P15s Gen 1</td>
+		</tr>
+		<tr>
+			<td>ThinkPad T14s</td>
+			<td>20T0, 20T1</td>
+			<td>ThinkPad T14s Gen 1</td>
+		</tr>
+		<tr>
+			<td>ThinkPad T14s AMD</td>
+			<td>20UH, 20UJ</td>
+			<td>ThinkPad T14s Gen 1</td>
+		</tr>
+		<tr>
+			<td>ThinkPad X13</td>
+			<td>20T2, 20T3</td>
+			<td>ThinkPad X13 Gen 1</td>
+		</tr>
+		<tr>
+			<td>ThinkPad X13 AMD</td>
+			<td>20UF, 20UG</td>
+			<td>ThinkPad X13 Gen 1</td>
+		</tr>
+		<tr>
+			<td>ThinkPad X1 Carbon G8</td>
+			<td>20U9, 20UA</td>
+			<td>ThinkPad X1 Carbon Gen 8</td>
+		</tr>
+		<tr>
+			<td>ThinkPad X1 Yoga G5</td>
+			<td>20UB, 20UC</td>
+			<td>ThinkPad X1 Yoga Gen 5</td>
+		</tr>
+		<tr>
+			<td>ThinkPad X13 Yoga G2</td>
+			<td>20W8, 20W9</td>
+			<td>ThinkPad X13 Yoga Gen 2</td>
+		</tr>
+		<tr>
+			<td>ThinkPad T14s G2</td>
+			<td>20WM, 20WN</td>
+			<td>ThinkPad T14s Gen 2</td>
+		</tr>
+
+		<tr>
+			<td>ThinkPad L13</td>
+			<td>20R3, 20R4</td>
+			<td>ThinkPad L13</td>
+		</tr>
+		<tr>
+			<td>ThinkPad L13 Yoga</td>
+			<td>20R5, 20R6</td>
+			<td>ThinkPad L13 Yoga</td>
+		</tr>
+		<tr>
+			<td>ThinkPad S2 G5</td>
+			<td>20R7</td>
+			<td>ThinkPad S2 5th Gen</td>
+		</tr>
+		<tr>
+			<td>ThinkPad S2 Yoga G5</td>
+			<td>20R8</td>
+			<td>ThinkPad S2 Yoga 5th Gen</td>
+		</tr>
+
+		<tr>
+			<td>ThinkPad L13 Yoga G2</td>
+			<td>20VK, 20VL</td>
+			<td>ThinkPad L13 Yoga Gen 2</td>
+		</tr>
+		<tr>
+			<td>ThinkPad L13 G2</td>
+			<td>20VH, 20VJ</td>
+			<td>ThinkPad L13 Gen 2</td>
+		</tr>
+		<tr>
+			<td>ThinkPad S2 Yoga G6</td>
+			<td>20VN</td>
+			<td>ThinkPad S2 Yoga Gen 6</td>
+		</tr>
+		<tr>
+			<td>ThinkPad S2 G6</td>
+			<td>20VM</td>
+			<td>ThinkPad S2 Gen 6</td>
+		</tr>
+
+
+
+	</table>
+
+</body>
+
+</html>
